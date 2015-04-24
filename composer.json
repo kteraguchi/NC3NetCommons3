@@ -12,23 +12,67 @@
             "homepage": "https://github.com/NetCommons3/NetCommons3/graphs/contributors"
         }
     ],
+    "repositories": [
+         {
+             "type": "package",
+             "package": [
+                 {
+                     "name": "components/angularui-tinymce",
+                     "version": "0.0.5",
+                     "type": "component",
+                     "dist": {
+                         "url": "https://github.com/angular-ui/ui-tinymce/archive/master.zip",
+                         "type": "zip"
+                     },
+                     "extra": {
+                         "component": {
+                             "scripts": [
+                                 "src/tinymce.js"
+                             ]
+                         }
+                     }
+                 },
+                 {
+                     "name": "angular-ui/bootstrap",
+                     "version": "dev-master",
+                     "dist": {
+                         "url": "https://github.com/grisendo/bootstrap/archive/master.zip",
+                         "type": "zip"
+                     },
+                     "extra": {
+                         "component": {
+                             "name": "angularui-bootstrap"
+                         }
+                     },
+                     "require": {}
+                 }
+             ]
+         }
+     ],
     "extra": {
         "installer-paths": {
             "app/Plugin/{$name}": ["type:cakephp-plugin"]
         }
     },
+    "minimum-stability": "dev",
     "require": {
         "cakedc/migrations":            "~2.2",
         "cakephp/cakephp":              "~2.4",
         "cakephp/debug_kit":            "~2.2",
         "chronon/mobile_detect":        "*",
-        "components/jquery":            "~2.1",
-        "components/jqueryui":          "~1.10",
         "dompdf/dompdf":                "~0.6",
         "mustangostang/spyc":           "@dev",
         "phpunit/phpunit":              "~3.7.38",
         "satooshi/php-coveralls":       "@dev",
-        "twbs/bootstrap":               "~3.1"
+        "robloach/component-installer": "1.0.*@dev",
+        "components/angular.js":        "~1.2.16",
+        "angular-ui/bootstrap":         "dev-master",
+        "components/angularui-tinymce": "0.0.5",
+        "components/jquery":            "~2.1",
+        "components/jqueryui":          "~1.10",
+        "components/bootstrap":         "3.1.*",
+        "tinymce/tinymce":              "~4.1.8",
+        "twbs/bootstrap": "~3.1"
     },
     "require-dev": {
         "netcommons/install":           "@dev",
@@ -36,13 +80,34 @@
         "netcommons/net-commons":       "@dev",
         "netcommons/roles":             "@dev",
         "netcommons/rooms":             "@dev",
-        "netcommons/users":             "@dev"
+        "netcommons/users":             "@dev",
+        "sebastian/phpcpd":             "*",
+        "cakephp/cakephp-codesniffer":  "~1.0",
+        "phpmd/phpmd" :                 "@stable",
+        "mayflower/php-codebrowser":    "~1.1",
+        "phploc/phploc":                "*",
+        "phpdocumentor/phpdocumentor":  "2.*",
+        "netcommons/theme-settings":    "@dev",
+        "netcommons/rss-readers":       "@dev",
+        "netcommons/iframes":           "@dev",
+        "netcommons/blocks":            "@dev",
+        "netcommons/menus":             "@dev",
+        "netcommons/access-counters":   "@dev",
+        "netcommons/public-space":      "@dev",
+        "netcommons/pages":             "@dev",
+        "netcommons/frames":            "@dev",
+        "netcommons/containers":        "@dev",
+        "netcommons/boxes":             "@dev",
+        "netcommons/announcements":     "@dev",
+        "netcommons/auth-general":      "@dev",
+        "netcommons/auth":              "@dev"
     },
     "bin": [
         "lib/Cake/Console/cake"
     ],
     "config": {
         "vendor-dir": "vendors",
-        "process-timeout": 3000
+        "process-timeout": 3000,
+        "component-dir": "app/webroot/components"
     }
 }
